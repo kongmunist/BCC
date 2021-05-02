@@ -17,7 +17,7 @@ void setup() {
     Serial.begin(115200);
     
     pinMode(outpin,OUTPUT);
-    lastTime = millis();
+    lastTime = micros();
     kiloh = 1000000/freq;
     kiloh = 1.0;
 
@@ -31,28 +31,33 @@ void setup() {
 }
 
 void loop() {
-    if(micros()-lastTime > 100000){
-        lastTime = micros();
-        ones = !ones;
-        
-//        if (ones){
-//            PORTB = B00000001;
-//        } else{
-//            PORTB = B00000000;
-//        }
-    }
-
-    
     if (ones){
-//        now = micros();
-//        while (micros()-now < 1){
-        for(int i = 0; i < 1000; i++){
+        while (micros()-lastTime < 5000){
             PORTB = B00000001;
-            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
-//            delayMicroseconds(kiloh);
+            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
             PORTB = B00000000;
-            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
-//            delayMicroseconds(kiloh);
+            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
         }
+    } else {
+        while (micros()-lastTime < 5000){}
     }
+    lastTime = micros();
+    ones = !ones;
+    
+//    if(micros()-lastTime > 5000){
+//        lastTime = micros();
+//        ones = !ones;
+//    }
+//
+//    
+//    if (ones){
+////        now = micros();
+//        for(int i = 0; i < 10; i++){
+//            PORTB = B00000001;
+//            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
+//            PORTB = B00000000;
+//            NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;NOP;
+//        }
+////        Serial.println(micros()-now);
+//    }
 }

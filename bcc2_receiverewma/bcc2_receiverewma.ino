@@ -16,9 +16,10 @@ void setup() {
 
 void loop() {
     pinVal = analogRead(readPin1);
-    EWMAval = (1-alpha)*EWMAval + alpha*pinVal;
+//    EWMAval = (1-alpha)*EWMAval + alpha*pinVal;
     Serial.print("1000,");
 //    Serial.println(pinVal-EWMAval);
-    Serial.println(EWMAval);
+//    Serial.println(EWMAval);
+    Serial.println(pinVal);
         
 }
