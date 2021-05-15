@@ -22,5 +22,4 @@ void loop() {
 //    Serial.println(pinVal-EWMAval);
 //    Serial.println(EWMAval);
     Serial.println(pinVal);
-        
 }

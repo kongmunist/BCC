@@ -40,10 +40,8 @@ void loop() {
     for (int i = 0; i < 2; i++) {
         sendBit((1+i) % 2);
     }
-//    PORTB = B00000001;
-//    delayMicroseconds(period);
-//    PORTB = B00000000;
-//    delayMicroseconds(period);
+
+
     
     // Other bits
     for (int i = 0; i < bitstring.length(); i++) {

@@ -73,14 +73,14 @@ void loop() {
     
     Serial.print("1000,");
     Serial.print(pinVal);
-    Serial.print(",");
-    Serial.print((runningMean>30)*700);
-    Serial.print(",");
-    Serial.print(runningMean);
-    Serial.print(",");
-    Serial.print((spikeCounter > 2)*800);
-    Serial.print(",");
-    Serial.print((pastSec[histIndex-1])*900);
+//    Serial.print(",");
+//    Serial.print((runningMean>30)*700);
+//    Serial.print(",");
+//    Serial.print(runningMean);
+//    Serial.print(",");
+//    Serial.print((spikeCounter > 2)*800);
+//    Serial.print(",");
+//    Serial.print((pastSec[histIndex-1])*900);
     Serial.println();
 
     
